@@ -1,0 +1,124 @@
+@import "variables.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "mixins.scss";
+@import "example-react-component.scss";
+
+html,
+body {
+  background-color: $backgroundColor;
+}
+
+body {
+  color: #333;
+  font-family: sans-serif;
+  // font-size: 0.8rem;
+  @include atSmall {
+    padding: 20px;
+    font-size: 1.1rem;
+  }
+  @include atMedium {
+    padding: 60px;
+    font-size: 1.2rem;
+  }
+}
+
+.text-gray {
+  color: $gray;
+}
+
+a {
+  text-decoration: none;
+}
+// a:link,
+// a:visited {
+//   color: $tagColor;
+// }
+
+a:hover {
+  color: $secondaryColor;
+}
+
+#portfolio {
+  .hk-card {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: 0.5s box-shadow;
+    &:hover {
+      box-shadow: 0px 12px 26px -11px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+
+      .hk-card-title {
+        color: $red;
+      }
+    }
+
+    .image-wrapper {
+      overflow: hidden;
+      border-radius: 10px;
+      & img {
+        border-radius: 10px;
+        transition: 0.5s transform;
+        &:hover {
+          transform: scale(1.2);
+          border-radius: 10px;
+        }
+      }
+      &:hover {
+        border-radius: 10px;
+      }
+    }
+
+    .hk-card-content {
+      background: #fff;
+
+      .hk-card-title {
+        transition: all 0.3s;
+      }
+    }
+
+    .tags-wrapper {
+      a {
+        color: #fff;
+        font-weight: 500;
+      }
+      button {
+        margin-right: 5px;
+
+        &:nth-last-col() {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Project Details */
+.project-details {
+  .icon {
+    font-size: 4.5rem;
+  }
+}
+
+/* the slides */
+
+.slick-slide > div {
+  margin: 0 5px;
+}
+.slick-list {
+  margin: 0 -5px;
+}
+.slick-arrow .slick-next {
+  background: #000;
+}
+
+.hk-btn {
+  border: none;
+  color: rgb(104, 104, 104);
+  padding: 8px;
+}
+
+.active-category {
+  border-bottom: 2px solid $red;
+  color: $red;
+}
